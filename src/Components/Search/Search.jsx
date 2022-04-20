@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Search.css";
+import { Link } from "react-router-dom"
 
 const Search = () => {
 	const [activeFilter, setActiveFilter] = useState("");
@@ -87,9 +88,11 @@ const Search = () => {
 				</div>
 			</div>
 			<form>
-				<button type="Submit" className="search_button">
-					Chercher
-				</button>
+				<Link to="/search" className="search_button">
+					<button type="Submit" className="search_button">
+						Chercher
+					</button>
+				</Link>
 			</form>
 		</div>
 	);
