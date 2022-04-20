@@ -1,0 +1,17 @@
+.gallery {
+    min-height: 10vh;
+    background-color: #c8a2c8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.vignette {
+    display: grid;
+    width: 25vw;
+    height: 8vh;
+    background-color: burlywood;
+    margin: 10px;
+}

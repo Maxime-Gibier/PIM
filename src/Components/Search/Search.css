@@ -1,0 +1,15 @@
+.search__div {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter {
+    display: flex;
+}
+
+.filtres {
+    display: none;
+}
