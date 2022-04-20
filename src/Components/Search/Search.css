@@ -13,3 +13,7 @@
 .filtres {
     display: none;
 }
+
+.active {
+    display: block;
+}
