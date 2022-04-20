@@ -8,8 +8,8 @@ const Search = () => {
 					<input type="string"></input>
 					<div class="filter">
 						<div>
-							<button name="Filtre">Filtre</button>
-							<div class="filtres">
+							<button name="Filtre">Categories</button>
+							<div class="filtres" id="Categories">
 								<button></button>
 								<button></button>
 								<button></button>
@@ -24,7 +24,7 @@ const Search = () => {
 							</div>
 						</div>
 						<div>
-							<button name="Filtre">Filtre</button>
+							<button name="Filtre">Plateforme</button>
 							<div class="filtres">
 								<button></button>
 								<button></button>

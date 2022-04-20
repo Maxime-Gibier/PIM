@@ -12,6 +12,17 @@
     display: grid;
     width: 25vw;
     height: 8vh;
-    background-color: burlywood;
     margin: 10px;
+}
+
+.one {
+    background-color: burlywood;
+}
+
+.two {
+    background-color: red;
+}
+
+.three {
+    background-color: white;
 }
