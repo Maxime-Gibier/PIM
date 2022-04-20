@@ -7,17 +7,21 @@ const Search = () => {
 	return (
 		<div class="search__div">
 			<form>
-				<input type="string"></input>
+				<input
+					type="string"
+					className="search_input"
+					placeholder="Rechercher"
+				></input>
 			</form>
 			<div className="filter">
 				<div>
 					<button
-						name="Filtre"
 						onClick={(event) =>
 							activeFilter === "Categories"
 								? setActiveFilter("")
 								: setActiveFilter("Categories")
 						}
+						className="filter_button"
 					>
 						Categories
 					</button>
@@ -35,6 +39,7 @@ const Search = () => {
 								? setActiveFilter("")
 								: setActiveFilter("Prix")
 						}
+						className="filter_button"
 					>
 						Prix
 					</button>
@@ -52,6 +57,7 @@ const Search = () => {
 								? setActiveFilter("")
 								: setActiveFilter("Plateforme")
 						}
+						className="filter_button"
 					>
 						Plateforme
 					</button>
@@ -69,6 +75,7 @@ const Search = () => {
 								? setActiveFilter("")
 								: setActiveFilter("DLC")
 						}
+						className="filter_button"
 					>
 						DLC
 					</button>
@@ -79,10 +86,13 @@ const Search = () => {
 					</div>
 				</div>
 			</div>
-			<button type="Submit">Chercher</button>
+			<form>
+				<button type="Submit" className="search_button">
+					Chercher
+				</button>
+			</form>
 		</div>
 	);
-	console.log(activeFilter);
 };
 
 export default Search;
