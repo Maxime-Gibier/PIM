@@ -1,5 +1,7 @@
 import React from "react";
 import "./Gallery.css";
+import img from './telechargement.jpeg'
+import img2 from './Y5RHNmzAtc6sRYwZlYiKHAxN.jpeg'
 
 const Gallery = () => {
 	return (

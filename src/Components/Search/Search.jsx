@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Search = () => {
 	const [activeFilter, setActiveFilter] = useState("");
 	return (
-		<div class="search__div">
+		<div className="search__div">
 			<div className="filter">
 				<div>
 					<button

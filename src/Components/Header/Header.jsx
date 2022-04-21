@@ -10,7 +10,7 @@ const Header = () => {
 				<h2>Home</h2>
 			</Link>
 			<input type="checkbox" id="menu-toggle"></input>
-			<label for="menu-toggle" className="hamburger">
+			<label htmlFor="menu-toggle" className="hamburger">
 				<span className="bun bun-top">
 					<span className="bun-crust bun-crust-top"></span>
 				</span>

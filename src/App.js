@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 
 import {db} from "./Firebase";
 import {collection, getDocs} from"firebase/firestore";
-import userEvent from "@testing-library/user-event";
 
 const App = () => {
 
@@ -36,7 +35,6 @@ const App = () => {
           </div>);
         })}
 
-      <Header />
 			<Router>
 				<Header />
 				<Routes>
