@@ -1,7 +1,7 @@
 import "./App.css";
 import HomePage from "./Pages/HomePage";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import SearchPage from "./Pages/SearchPage";
@@ -27,14 +27,14 @@ const App = () => {
 		<div className="App">
 			<Router>
 				<Header />
-				<Switch>
-					<Route exact path="/search">
-						<SearchPage />
+				<Routes>
+					<Route exact path="/search" element={<SearchPage />}>
+						test
 					</Route>
-					<Route exact path="/">
-						<HomePage />
+					<Route exact path="/" element={<HomePage />}>
+						test2
 					</Route>
-				</Switch>
+					</Routes>
 			</Router>
 		</div>
 	);
