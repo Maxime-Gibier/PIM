@@ -24,9 +24,9 @@ console.log(firebaseConfig);
 
 const App = () => {
 	return (
-    <div className="App">
-      <Header />
+		<div className="App">
 			<Router>
+				<Header />
 				<Switch>
 					<Route exact path="/search">
 						<SearchPage />

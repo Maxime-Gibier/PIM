@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./Search.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Search = () => {
 	const [activeFilter, setActiveFilter] = useState("");
-	console.log(activeFilter);
 	return (
 		<div class="search__div">
 			<form>
