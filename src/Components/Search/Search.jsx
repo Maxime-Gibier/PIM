@@ -64,6 +64,9 @@ const Search = () => {
 					<button>Categorie</button>
 					<button>Categorie</button>
 					<button>Categorie</button>
+					<button>Categorie</button>
+					<button>Categorie</button>
+					<button>Categorie</button>
 				</div>
 				<div className={activeFilter === "Prix" ? "active" : "hidden"}>
 					<button>Prix</button>

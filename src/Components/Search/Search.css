@@ -18,7 +18,7 @@
 }
 
 .active {
-	display: block;
+	display: flex;
 }
 
 .search_input {
@@ -32,7 +32,7 @@
 	margin-top: 20px;
 }
 
-.filter_button {
+.filter_button, .filters button {
 	background-color: #ad00ff;
 	border-radius: 10px;
 	width: 55px;
@@ -55,4 +55,15 @@
 
 .filters {
     height: 60px;
+}
+
+.filter_button {
+    margin-bottom: 10px;
+}
+
+.filters div {
+    width: 300px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-spacing: 5px;
 }
