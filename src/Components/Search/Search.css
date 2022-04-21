@@ -13,23 +13,12 @@
 	justify-content: space-around;
 }
 
-.hidden {
+.hidden, .hidden button {
 	display: none;
 }
 
 .active {
 	display: flex;
-}
-
-.search_input {
-	border-radius: 50px;
-	border: solid 2px #ad00ff;
-	background-color: white;
-	width: 275px;
-	height: 24px;
-	padding: 8px 8px 8px 15px;
-	margin-bottom: 15px;
-	margin-top: 20px;
 }
 
 .filter_button, .filters button {
@@ -63,7 +52,12 @@
 
 .filters div {
     width: 300px;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     border-spacing: 5px;
+}
+
+.filters button {
+	margin: 2px 2px;
+	background-color: #DE97FF;
 }

@@ -49,9 +49,9 @@ const Search = () => {
 					<button
 						name="Filtre"
 						onClick={(event) =>
-							activeFilter === "DLC"
+							activeFilter === "Difficulte"
 								? setActiveFilter("")
-								: setActiveFilter("DLC")
+								: setActiveFilter("Difficulte")
 						}
 						className="filter_button"
 					>
@@ -61,12 +61,13 @@ const Search = () => {
 			</div>
 			<div className="filters">
 				<div className={activeFilter === "Categories" ? "active" : "hidden"}>
-					<button>Categorie</button>
-					<button>Categorie</button>
-					<button>Categorie</button>
-					<button>Categorie</button>
-					<button>Categorie</button>
-					<button>Categorie</button>
+					<button>Action</button>
+					<button>Aventure</button>
+					<button>Combat</button>
+					<button>FPS</button>
+					<button>RPG</button>
+					<button>Sport</button>
+					<button>Strategie</button>
 				</div>
 				<div className={activeFilter === "Prix" ? "active" : "hidden"}>
 					<button>Prix</button>
@@ -74,14 +75,16 @@ const Search = () => {
 					<button>Prix</button>
 				</div>
 				<div className={activeFilter === "Plateforme" ? "active" : "hidden"}>
-					<button>Plateforme</button>
-					<button>Plateforme</button>
-					<button>Plateforme</button>
+					<button>PlayStation</button>
+					<button>Steam</button>
+					<button>Xbox</button>
+					<button>Origin</button>
+					<button>Epic Games</button>
 				</div>
-				<div className={activeFilter === "DLC" ? "active" : "hidden"}>
-					<button>DLC</button>
-					<button>DLC</button>
-					<button>DLC</button>
+				<div className={activeFilter === "Difficulte" ? "active" : "hidden"}>
+					<button>Débutant</button>
+					<button>Intermédiaire</button>
+					<button>Expert</button>
 				</div>
 			</div>
 			<Link to="/search" className="search_button">
