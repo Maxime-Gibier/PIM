@@ -1,30 +1,39 @@
 import "./App.css";
 import HomePage from "./Pages/HomePage";
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
 import SearchPage from "./Pages/SearchPage";
 import Header from "./Components/Header/Header";
+import { useEffect, useState } from "react";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-librariesj
-// Your web app's Firebase configuration
-const firebaseConfig = {
-	apiKey: "AIzaSyDJtTI-nK_abvb3O-vF1riXxBK4GoB7_QQ",
-	authDomain: "projet-mobile-intensif.firebaseapp.com",
-	projectId: "projet-mobile-intensif",
-	storageBucket: "projet-mobile-intensif.appspot.com",
-	messagingSenderId: "842541748608",
-	appId: "1:842541748608:web:18a975325b2edf8f25f165",
-};
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-console.log(firebaseConfig);
+import {db} from "./Firebase";
+import {collection, getDocs} from"firebase/firestore";
+import userEvent from "@testing-library/user-event";
 
 const App = () => {
+
+  const [games, setGames]= useState([]);
+  const gamesCollectionRef = collection(db, "games");
+  useEffect(()=>{
+    const getGames= async()=>{
+      const data = await getDocs(gamesCollectionRef)
+      setGames(data.docs.map((doc)=> ({...doc.data(), id: doc.id})));
+      console.log(gamesCollectionRef)
+    }
+    getGames();
+  },[]) 
+
 	return (
     <div className="App">
+
+      {games.map((games)=>{
+        return (
+          <div>
+            <h1>Name: {games.name}</h1>
+            <h1>Desc: {games.desc}</h1>
+            <h1>Editor: {games.editor}</h1>
+          </div>);
+        })}
+
       <Header />
 			<Router>
 				<Switch>
