@@ -4,12 +4,11 @@
 
 
 .hamburger {
-	width: 100%;
+	width: 50%;
 	height: 48px;
 	position: relative;
     display: flex;
 	cursor: pointer;
-    background-color: lightgrey;
 }
 
 .bun {
@@ -17,7 +16,7 @@
 	height: 30px;
 	position: absolute;
 	top: 9px;
-	right: 9px;
+	right: 0px;
 	transition: transform 0.18s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.15s;
 }
 
@@ -28,7 +27,7 @@
 	position: absolute;
 	left: 7px;
 	transition: transform 0.1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) 0.2s;
-	background-color: black;
+	background-color: white;
 	border-radius: 1px;
 }
 
@@ -54,4 +53,18 @@
 #menu-toggle:checked + .hamburger .bun-crust-bottom {
 	transform: none;
 	transition: transform 0.1806 cubic-bezier(0.04, 0.04, 0.12, 0.96);
+}
+
+.header {
+	background-color: black;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 20px;
+}
+
+.home {
+	color: white;
+	text-decoration: none;
 }
