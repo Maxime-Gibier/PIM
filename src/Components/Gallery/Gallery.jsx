@@ -1,7 +1,5 @@
 import React from "react";
 import "./Gallery.css";
-import img from "./Y5RHNmzAtc6sRYwZlYiKHAxN.jpg"
-import img2 from "./EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7.jpeg"
 
 const Gallery = () => {
 	return (
