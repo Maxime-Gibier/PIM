@@ -44,7 +44,8 @@ const App = () => {
 					<Route exact path="/" element={<HomePage />}>
 						test2
 					</Route>
-					</Routes>
+          
+				</Routes>
 			</Router>
 		</div>
 	);

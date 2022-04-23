@@ -1,4 +1,5 @@
 import React from "react";
+import Authentification from "../Components/Authentification/Authentification";
 import Gallery from "../Components/Gallery/Gallery";
 import Search from "../Components/Search/Search";
 
@@ -7,6 +8,7 @@ const HomePage = () => {
 		<>
 			<Search />
 			<Gallery />
+			<Authentification />
 		</>
 	);
 };
