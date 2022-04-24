@@ -18,16 +18,20 @@ const App = () => {
 			setGames(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
 		};
 		getGames();
-  }, []);
-  console.log(games)
+	}, []);
+	console.log(games);
 
 	return (
 		<div className="App">
 			<Router>
 				<Header />
 				<Routes>
-          <Route exact path="/:gameid" element={<GamePage games={ games }/>}></Route>
-					<Route exact path="/" element={<HomePage games={ games } />}></Route>
+					<Route
+						exact
+						path="/:gameid"
+						element={<GamePage games={games} />}
+					></Route>
+					<Route exact path="/" element={<HomePage games={games} />}></Route>
 				</Routes>
 			</Router>
 		</div>
