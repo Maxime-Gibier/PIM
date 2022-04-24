@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const Search = ({ games, activeFilter, setActiveFilter, setFilteredGames }) => {
 	const [activeToggle, setActiveToggle] = useState("");
 
+	console.log('game :', games)
 	useEffect(() => {
 		if (activeFilter === "") {
 			setFilteredGames(games);

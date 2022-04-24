@@ -19,19 +19,18 @@ const App = () => {
 		};
 		getGames();
 	}, []);
-	console.log(games);
 
 	return (
 		<div className="App">
 			<Router>
 				<Header />
 				<Routes>
+					<Route exact path="/" element={<HomePage games={games} />}></Route>
 					<Route
 						exact
 						path="/:gameid"
 						element={<GamePage games={games} />}
 					></Route>
-					<Route exact path="/" element={<HomePage games={games} />}></Route>
 				</Routes>
 			</Router>
 		</div>

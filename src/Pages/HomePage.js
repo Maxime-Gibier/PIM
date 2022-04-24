@@ -10,7 +10,7 @@ const HomePage = (games) => {
 	useEffect(() => {
 		setFilteredGames(games.games);
 	}, [games]);
-	console.log(games);
+	
 	return (
 		<>
 			<Search

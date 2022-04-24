@@ -1,0 +1,38 @@
+
+.game_page {
+    background-color: black;
+    color: white;
+    min-height: calc(812px - 48px);
+    text-align: left;
+}
+
+.game_infos {
+    display: flex;
+    padding: 15px 25px;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.game_page h3 {
+        padding-left: 25px;
+}
+
+.game_title {
+    max-width: 40vw;
+
+}
+
+.game_image {
+    width: 100vw;
+}
+
+.game_description {
+    padding: 0px 25px;
+    font-size: 11px;
+}
+
+.game_price {
+    color: green;
+    padding-left: 25px;
+}

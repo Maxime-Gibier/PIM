@@ -1,0 +1,21 @@
+.platforme_hidden {
+    display: none;
+}
+
+.platfrome_show {
+    display: block;
+}
+
+.platforme_container {
+    background: rgba(196, 196, 196, 0.6);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    height: 30px;
+}
+
+.platforme_container img{
+    height: 25px;
+}
