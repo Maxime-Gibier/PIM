@@ -7,11 +7,10 @@ import { auth } from "../../Firebase";
 
 const Authentification = () =>{    
     return(
-        <div>
+        <div className="auth_body">
             <button type="button" className="login-with-google-btn" onClick={signInWithGoogle}>Sign in with Google</button>
-            <h1> {localStorage.getItem("name")}</h1>
-            <h1> {localStorage.getItem("email")}</h1>
-            <img src={localStorage.getItem("profilePic")} alt="profilePic" />
+            <h5> {localStorage.getItem("name")}</h5>
+            <h6> {localStorage.getItem("email")}</h6>
         </div>
     );
 };

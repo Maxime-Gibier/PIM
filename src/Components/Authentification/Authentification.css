@@ -37,8 +37,10 @@
     cursor: not-allowed;
 }
   
-  body {
+.auth_body {
     text-align: center;
-    padding-top: 2rem;
+    padding: 2rem 0px;
+    background-color: black;
+    color: white;
   }
   
