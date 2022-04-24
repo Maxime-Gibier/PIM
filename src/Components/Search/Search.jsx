@@ -7,19 +7,30 @@ const Search = ({
 	activeCategorie,
 	setActiveCategorie,
 	setFilteredGames,
+	activePlatforme,
+	setActivePlatforme,
 }) => {
 	const [activeToggle, setActiveToggle] = useState("");
 
 	useEffect(() => {
-		if (activeCategorie === "") {
-			setFilteredGames(games);
+		if (activeCategorie != "" || activePlatforme != "") {
+			var filtered = games;
+			if (activeCategorie != "") {
+				filtered = filtered.filter((game) =>
+					game.categories.includes(activeCategorie)
+				);
+			}
+			if (activePlatforme != "") {
+				filtered = filtered.filter((game) =>
+					game.platforme.includes(activePlatforme)
+				);
+			}
+			console.log(filtered)
+			setFilteredGames(filtered);
 			return;
 		}
-		const filtered = games.filter((game) =>
-			game.categories.includes(activeCategorie)
-		);
-		setFilteredGames(filtered);
-	}, [activeCategorie]);
+		setFilteredGames(games);
+	}, [activeCategorie, activePlatforme]);
 
 	return (
 		<div className="search__div">
@@ -72,7 +83,7 @@ const Search = ({
 						}
 						className="filter_button"
 					>
-						DLC
+						Difficulté
 					</button>
 				</div>
 			</div>
@@ -96,11 +107,15 @@ const Search = ({
 					<button>Prix</button>
 				</div>
 				<div className={activeToggle === "Plateforme" ? "active" : "hidden"}>
-					<button>PlayStation</button>
-					<button>Steam</button>
-					<button>Xbox</button>
-					<button>Origin</button>
-					<button>Epic Games</button>
+					<button onClick={() => setActivePlatforme("Playstation")}>
+						PlayStation
+					</button>
+					<button onClick={() => setActivePlatforme("pc")}>Steam</button>
+					<button onClick={() => setActivePlatforme("Xbox")}>Xbox</button>
+					<button onClick={() => setActivePlatforme("Origin")}>Origin</button>
+					<button onClick={() => setActivePlatforme("Epicgames")}>
+						Epic Games
+					</button>
 				</div>
 				<div className={activeToggle === "Difficulte" ? "active" : "hidden"}>
 					<button>Débutant</button>

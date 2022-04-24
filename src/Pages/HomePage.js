@@ -4,6 +4,7 @@ import Search from "../Components/Search/Search";
 
 const HomePage = (games) => {
 	const [activeCategorie, setActiveCategorie] = useState("");
+	const [activePlatforme, setActivePlatforme] = useState("");
 	const [filteredGames, setFilteredGames] = useState([]);
 
 	useEffect(() => {
@@ -15,6 +16,8 @@ const HomePage = (games) => {
 			<Search
 				activeCategorie={activeCategorie}
 				setActiveCategorie={setActiveCategorie}
+				activePlatforme={activePlatforme}
+				setActivePlatforme={setActivePlatforme}
 				games={games.games}
 				setFilteredGames={setFilteredGames}
 			/>
