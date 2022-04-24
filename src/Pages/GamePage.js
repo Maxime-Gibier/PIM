@@ -15,12 +15,23 @@ const GamePage = (games) => {
 			<div className="game_infos">
 				<h2 className="game_title">{game[0].name}</h2>
 				<Plateformes platformes={game[0].platforme} />
-            </div>
-            <h2 className="game_price">{game[0].price}<br></br></h2>
+			</div>
+			<div className="price_container">
+				<h2 className="game_price">
+					{game[0].price}
+					<br></br>
+				</h2>
+				<h3 className="acheter">
+					Acheter<br></br>
+				</h3>
+			</div>
 			<h3>
 				<br></br>A propos<br></br>
 			</h3>
-			<p className="game_description"><br></br>{game[0].desc}</p>
+			<p className="game_description">
+				<br></br>
+				{game[0].desc}
+			</p>
 		</div>
 	);
 };

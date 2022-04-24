@@ -2,20 +2,24 @@ import React, { useEffect, useState } from "react";
 import "./Search.css";
 import { Link } from "react-router-dom";
 
-const Search = ({ games, activeFilter, setActiveFilter, setFilteredGames }) => {
+const Search = ({
+	games,
+	activeCategorie,
+	setActiveCategorie,
+	setFilteredGames,
+}) => {
 	const [activeToggle, setActiveToggle] = useState("");
 
-	console.log('game :', games)
 	useEffect(() => {
-		if (activeFilter === "") {
+		if (activeCategorie === "") {
 			setFilteredGames(games);
 			return;
 		}
-		const filtered = games.filter((game) => 
-			game.categories.includes(activeFilter)
+		const filtered = games.filter((game) =>
+			game.categories.includes(activeCategorie)
 		);
 		setFilteredGames(filtered);
-	}, [activeFilter]);
+	}, [activeCategorie]);
 
 	return (
 		<div className="search__div">
@@ -74,13 +78,15 @@ const Search = ({ games, activeFilter, setActiveFilter, setFilteredGames }) => {
 			</div>
 			<div className="filters">
 				<div className={activeToggle === "Categories" ? "active" : "hidden"}>
-					<button onClick={() => setActiveFilter("action")}>Action</button>
-					<button onClick={() => setActiveFilter("aventure")}>Aventure</button>
-					<button onClick={() => setActiveFilter("combat")}>Combat</button>
-					<button onClick={() => setActiveFilter("fps")}>FPS</button>
-					<button onClick={() => setActiveFilter("rpg")}>RPG</button>
-					<button onClick={() => setActiveFilter("sport")}>Sport</button>
-					<button onClick={() => setActiveFilter("strategie")}>
+					<button onClick={() => setActiveCategorie("action")}>Action</button>
+					<button onClick={() => setActiveCategorie("aventure")}>
+						Aventure
+					</button>
+					<button onClick={() => setActiveCategorie("combat")}>Combat</button>
+					<button onClick={() => setActiveCategorie("fps")}>FPS</button>
+					<button onClick={() => setActiveCategorie("rpg")}>RPG</button>
+					<button onClick={() => setActiveCategorie("sport")}>Sport</button>
+					<button onClick={() => setActiveCategorie("strategie")}>
 						Strategie
 					</button>
 				</div>
@@ -102,10 +108,7 @@ const Search = ({ games, activeFilter, setActiveFilter, setFilteredGames }) => {
 					<button>Expert</button>
 				</div>
 			</div>
-			<button
-				onClick={() => setActiveFilter("")}
-				className="search_button"
-			>
+			<button onClick={() => setActiveCategorie("")} className="search_button">
 				Réinitialiser
 			</button>
 		</div>

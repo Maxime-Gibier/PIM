@@ -3,7 +3,7 @@ import Gallery from "../Components/Gallery/Gallery";
 import Search from "../Components/Search/Search";
 
 const HomePage = (games) => {
-	const [activeFilter, setActiveFilter] = useState("");
+	const [activeCategorie, setActiveCategorie] = useState("");
 	const [filteredGames, setFilteredGames] = useState([]);
 
 	useEffect(() => {
@@ -13,8 +13,8 @@ const HomePage = (games) => {
 	return (
 		<>
 			<Search
-				activeFilter={activeFilter}
-				setActiveFilter={setActiveFilter}
+				activeCategorie={activeCategorie}
+				setActiveCategorie={setActiveCategorie}
 				games={games.games}
 				setFilteredGames={setFilteredGames}
 			/>
