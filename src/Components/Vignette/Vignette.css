@@ -1,0 +1,28 @@
+.gamename {
+    color: white;
+}
+
+.vignette {
+    display: grid;
+    margin: 13px 10px 0px 10px;
+    text-decoration: none;
+}
+
+.vignette p{
+    color: white;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    bottom: 25px;
+    left: 5px;
+    font-size: 10px;
+    line-height: 20px;
+    border-radius: 10px;
+    background-color: #ad00ff;
+}
+
+.vignette, .vignette img {
+        width: 150px;
+    height: 100px;
+        border-radius: 20px;
+}

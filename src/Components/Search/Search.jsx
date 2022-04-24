@@ -1,18 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Search.css";
 import { Link } from "react-router-dom";
 
-const Search = () => {
-	const [activeFilter, setActiveFilter] = useState("");
+const Search = ({ games, activeFilter, setActiveFilter, setFilteredGames }) => {
+	const [activeToggle, setActiveToggle] = useState("");
+
+	useEffect(() => {
+		if (activeFilter === "") {
+			setFilteredGames(games);
+			return;
+		}
+		const filtered = games.filter((game) => 
+			game.categories.includes(activeFilter)
+		);
+		setFilteredGames(filtered);
+	}, [activeFilter]);
+
 	return (
 		<div className="search__div">
 			<div className="filter">
 				<div>
 					<button
 						onClick={(event) =>
-							activeFilter === "Categories"
-								? setActiveFilter("")
-								: setActiveFilter("Categories")
+							activeToggle === "Categories"
+								? setActiveToggle("")
+								: setActiveToggle("Categories")
 						}
 						className="filter_button"
 					>
@@ -23,9 +35,9 @@ const Search = () => {
 					<button
 						name="Filtre"
 						onClick={(event) =>
-							activeFilter === "Prix"
-								? setActiveFilter("")
-								: setActiveFilter("Prix")
+							activeToggle === "Prix"
+								? setActiveToggle("")
+								: setActiveToggle("Prix")
 						}
 						className="filter_button"
 					>
@@ -36,9 +48,9 @@ const Search = () => {
 					<button
 						name="Filtre"
 						onClick={(event) =>
-							activeFilter === "Plateforme"
-								? setActiveFilter("")
-								: setActiveFilter("Plateforme")
+							activeToggle === "Plateforme"
+								? setActiveToggle("")
+								: setActiveToggle("Plateforme")
 						}
 						className="filter_button"
 					>
@@ -49,9 +61,9 @@ const Search = () => {
 					<button
 						name="Filtre"
 						onClick={(event) =>
-							activeFilter === "Difficulte"
-								? setActiveFilter("")
-								: setActiveFilter("Difficulte")
+							activeToggle === "Difficulte"
+								? setActiveToggle("")
+								: setActiveToggle("Difficulte")
 						}
 						className="filter_button"
 					>
@@ -60,38 +72,41 @@ const Search = () => {
 				</div>
 			</div>
 			<div className="filters">
-				<div className={activeFilter === "Categories" ? "active" : "hidden"}>
-					<button>Action</button>
-					<button>Aventure</button>
-					<button>Combat</button>
-					<button>FPS</button>
-					<button>RPG</button>
-					<button>Sport</button>
-					<button>Strategie</button>
+				<div className={activeToggle === "Categories" ? "active" : "hidden"}>
+					<button onClick={() => setActiveFilter("action")}>Action</button>
+					<button onClick={() => setActiveFilter("aventure")}>Aventure</button>
+					<button onClick={() => setActiveFilter("combat")}>Combat</button>
+					<button onClick={() => setActiveFilter("fps")}>FPS</button>
+					<button onClick={() => setActiveFilter("rpg")}>RPG</button>
+					<button onClick={() => setActiveFilter("sport")}>Sport</button>
+					<button onClick={() => setActiveFilter("strategie")}>
+						Strategie
+					</button>
 				</div>
-				<div className={activeFilter === "Prix" ? "active" : "hidden"}>
+				<div className={activeToggle === "Prix" ? "active" : "hidden"}>
 					<button>Prix</button>
 					<button>Prix</button>
 					<button>Prix</button>
 				</div>
-				<div className={activeFilter === "Plateforme" ? "active" : "hidden"}>
+				<div className={activeToggle === "Plateforme" ? "active" : "hidden"}>
 					<button>PlayStation</button>
 					<button>Steam</button>
 					<button>Xbox</button>
 					<button>Origin</button>
 					<button>Epic Games</button>
 				</div>
-				<div className={activeFilter === "Difficulte" ? "active" : "hidden"}>
+				<div className={activeToggle === "Difficulte" ? "active" : "hidden"}>
 					<button>Débutant</button>
 					<button>Intermédiaire</button>
 					<button>Expert</button>
 				</div>
 			</div>
-			<Link to="/search" className="search_button">
-				<button type="Submit" className="search_button">
-					Chercher
-				</button>
-			</Link>
+			<button
+				onClick={() => setActiveFilter("")}
+				className="search_button"
+			>
+				Réinitialiser
+			</button>
 		</div>
 	);
 };

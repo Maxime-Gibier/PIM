@@ -1,88 +1,14 @@
 import React from "react";
 import "./Gallery.css";
-import img from "./telechargement.jpeg";
-import img2 from "./Y5RHNmzAtc6sRYwZlYiKHAxN.jpeg";
+import Vignette from "../Vignette/Vignette";
 
-const Gallery = () => {
+const Gallery = ({ filteredGames}) => {
 	return (
-		<div className="gallery">
-			<div className="vignette">
-				<img className="one" src={img}></img>
-				<p>-20%</p>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-				<p>-20%</p>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-				<p>-20%</p>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-				<p>-20%</p>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-				<p>-20%</p>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-				<p>-20%</p>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-				<p>-20%</p>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-				<p>-20%</p>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-				<p>-20%</p>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
-			</div>
-			<div className="vignette">
-				<img className="one" src={img2}></img>
+		<div className="gallery_body">
+			<div className="gallery">
+				{filteredGames.map(function (game) {
+					return <Vignette key={game.id} game={game} />;
+				})}
 			</div>
 		</div>
 	);
